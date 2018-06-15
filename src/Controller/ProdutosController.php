@@ -15,6 +15,19 @@ class ProdutosController extends AppController{
         $produto =  $produtosTable->newEntity();
         $this->set('produto', $produto) ;
     }
+
+    public function salva(){
+        $produtosTable = TableRegistry::get('Produtos');
+        $produto = $produtosTable->newEntity($this->request->data());
+       
+        if($produtosTable->save($produto)) {
+            $msg = "Produto salvo com sucesso" ;
+        }else {
+            $msg = "Erro ao salvar o produto" ;
+        }
+
+        $this->set('msg', $msg) ;
+    }
 }
 
 ?>
