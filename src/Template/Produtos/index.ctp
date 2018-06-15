@@ -8,6 +8,7 @@
                 <th>Preço</th>
                 <th>Descrição</th>
                 <th>Quantidade</th>
+                <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,6 +21,9 @@
                     <td><?= $this->Money->format($produto['preco']) ?></td>
                     <td><?= $produto['descricao'] ?></td>
                     <td><?= $produto['quantidade'] ?></td>
+                    <td>
+                        <?php echo $this->html->Link('Editar' , ['controller' => 'produtos', 'action' => 'editar', $produto['id']]) ?>
+                    </td>
                 </tr>
                 <?php 
                     }

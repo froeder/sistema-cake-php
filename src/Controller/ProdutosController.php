@@ -28,6 +28,16 @@ class ProdutosController extends AppController{
 
         $this->set('msg', $msg) ;
     }
+
+    public function editar($id){
+
+        $produtosTable = TableRegistry::get('Produtos') ;
+        $produto = $produtosTable->get($id);
+
+        $this->set('produto', $produto);
+
+        $this->render('novo');
+    }
 }
 
 ?>
