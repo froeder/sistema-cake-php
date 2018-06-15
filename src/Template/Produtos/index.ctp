@@ -26,5 +26,9 @@
                 ?>
             </tbody>
         </table>
+                    
+        <?php 
+            echo $this->html->Link('Novo Produto' , ['controller' => 'produtos', 'action' => 'novo'])
+        ?>
     </div>
 </div>
