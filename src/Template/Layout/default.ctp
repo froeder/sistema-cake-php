@@ -42,8 +42,8 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         </ul>
         <div class="top-bar-section">
             <ul class="right">
-                <li><a target="_blank" href="https://book.cakephp.org/3.0/">Documentation</a></li>
-                <li><a target="_blank" href="https://api.cakephp.org/3.0/">API</a></li>
+                <li><a target="_blank" href="">Perfil</a></li>
+                <li><a target="_blank" href="">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -51,7 +51,17 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <div class="container clearfix">
         <?= $this->fetch('content') ?>
     </div>
-    <footer>
+    <footer class="clearfix" style="background-color:#116d76">
+        <div class="container">
+            <a target="_noblank" style="text-decoration:none ; color: white;" href="https://froeder.github.io/">
+                <p>
+                    Desenvolvido por: 
+                    <strong>
+                        Jhonatan Froeder
+                    </strong>
+                </p>
+            </a>
+        </div>
     </footer>
 </body>
 </html>
