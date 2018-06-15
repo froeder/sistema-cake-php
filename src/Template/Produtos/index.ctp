@@ -17,7 +17,7 @@
                 <tr bgcolor="#d9f9f1">
                     <td><?= $produto['id'] ?></td>
                     <td><?= $produto['nome'] ?></td>
-                    <td><?= $produto['preco'] ?></td>
+                    <td><?= $this->Money->format($produto['preco']) ?></td>
                     <td><?= $produto['descricao'] ?></td>
                     <td><?= $produto['quantidade'] ?></td>
                 </tr>
