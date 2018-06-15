@@ -34,5 +34,9 @@
         <?php 
             echo $this->html->Link('Novo Produto' , ['controller' => 'produtos', 'action' => 'novo'])
         ?>
+        <br>
+        <?php 
+            echo $this->html->Link('Voltar para Home' , ['controller' => 'paginas' , 'action' => 'index'])
+        ?>
     </div>
 </div>
