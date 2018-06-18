@@ -41,6 +41,11 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </li>
         </ul>
         <div class="top-bar-section">
+            <ul class="left">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/produtos">Produtos</a></li>
+                <li><a href="/ususarios">Usuários</a></li>
+            </ul>
             <ul class="right">
                 <li><a href="/perfil">Perfil</a></li>
                 <li><a href="/logout">Logout</a></li>

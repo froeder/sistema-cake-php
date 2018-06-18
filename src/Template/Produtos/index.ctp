@@ -3,12 +3,12 @@
         <table class="table">
             <thead style="background-color: #88c9b7">
                 <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>Preço</th>
-                <th>Descrição</th>
-                <th>Quantidade</th>
-                <th>Ações</th>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Preço</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
