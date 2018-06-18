@@ -1,0 +1,1 @@
+<?php echo ("isso aqui qualquer pessoa pode ver")?>
