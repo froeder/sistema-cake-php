@@ -48,7 +48,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
             </ul>
             <ul class="right">
                 <li><a href="/perfil">Perfil</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/logout"><?php echo $this->Html->Link('Logout' , ['controller' => 'Users', 'action' => 'logout']) ?></a></li>
             </ul>
         </div>
     </nav>
