@@ -23,6 +23,7 @@
                     <td><?= $produto['quantidade'] ?></td>
                     <td>
                         <?php echo $this->html->Link('Editar' , ['controller' => 'produtos', 'action' => 'editar', $produto['id']]) ?>
+                        <?php echo $this->Form->postLink('Apagar' , ['controller' => 'produtos', 'action' => 'apagar', $produto['id']],['confirm' => 'Tem certeza que deseja apagar o produto' .$produto['nome']. '?']) ?>
                     </td>
                 </tr>
                 <?php 

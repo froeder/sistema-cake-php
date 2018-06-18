@@ -16,6 +16,20 @@ class ProdutosController extends AppController{
         $this->set('produto', $produto) ;
     }
 
+    public function apagar($id){
+        $produtosTable = TableRegistry::get('Produtos');
+
+        $produto = $produtosTable->get($id);
+
+        if($produtosTable->delete($produto)){
+            $msg = "Produto deletado com sucesso!" ;
+        }else{
+        $msg = "Erro ao deletar o produto " + $id ; 
+        }
+
+        $this->redirect('Produtos/index') ;
+    }
+
     public function salva(){
         $produtosTable = TableRegistry::get('Produtos');
         $produto = $produtosTable->newEntity($this->request->data());

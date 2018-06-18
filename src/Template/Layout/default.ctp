@@ -43,7 +43,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
         <div class="top-bar-section">
             <ul class="right">
                 <li><a href="/perfil">Perfil</a></li>
-                <li><a href="">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
             </ul>
         </div>
     </nav>
