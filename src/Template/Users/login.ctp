@@ -8,4 +8,8 @@
         echo $this->Form->button('Acessar') ;
         echo $this->Form->end();
     ?>
+
+    <?php
+        echo $this->Html->Link('Cadastrar novo', ['controller' => 'users' , 'action' => 'adicionar']);
+    ?>
 </div>

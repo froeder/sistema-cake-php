@@ -44,7 +44,7 @@ class UsersController extends AppController {
         $user = $userTable->newEntity($this->request->data()) ;
 
         if($userTable->save($user)){
-            $this->Flash->set('Usuário cadastrador com sucesso!');
+            $this->Flash->set('Usuário cadastrado com sucesso!');
         }else {
             $this->Flash->set('Erro ao cadastrar usuário !');
         }
