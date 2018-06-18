@@ -1,8 +1,15 @@
 <?php
 namespace App\Controller ;
 use Cake\ORM\TableRegistry ;
+use Cake\Event\Event ;
 
 class UsersController extends AppController {
+
+    public function beforeFilter(Event $event){
+        parent::beforeFilter($event);
+
+        $this->Auth->allow(['adicionar', 'salvar']);
+    }
 
     public function index(){
         $userTable = TableRegistry::get('Users');
@@ -46,10 +53,17 @@ class UsersController extends AppController {
     }
 
     public function login(){
-        $userTable = TableRegistry::get('Users');
-        $user = $userTable->newEntity();
+        if($this->request->is('post')){
+            $user = $this->Auth->identify();
 
-        $this->set('user' , $user);
+            if($user){
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            }else{
+                $this->Flash->set('Usuário ou senha inválidos' , ['element' => 'error']);
+            }
+
+        }
     }
 
 }
