@@ -1,6 +1,6 @@
 <?php 
 namespace App\Controller;
-use Cake\ORM\TableRegistry ;
+use \Cake\ORM\TableRegistry ;
 
 class ProdutosController extends AppController{
     public function index(){
