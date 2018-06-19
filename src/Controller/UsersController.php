@@ -59,7 +59,41 @@ class UsersController extends AppController
   }
 
 
+<<<<<<< HEAD
     /*public function login(){
+=======
+        $this->set('user', $user);
+    }
+
+    public function apagar($id){
+        $userTable = TableRegistry::get('Users') ;
+        $user = $userTable->get($id) ;
+
+        if($userTable->delete($user)){
+            $this->Flash->set('Usuário deletado com sucesso!');
+        }else{
+            $this->Flash->set('Erro ao deletar usuário');
+        }
+
+        $this->redirect('Users/index') ;
+    }
+
+    public function salvar(){
+        $userTable = TableRegistry::get('Users');
+
+        $user = $userTable->newEntity($this->request->data()) ;
+
+        if($userTable->save($user)){
+            $this->Flash->set('Usuário cadastrador com sucesso!');
+        }else {
+            $this->Flash->set('Erro ao cadastrar usuário !');
+        }
+
+        $this->redirect('Users/index') ;
+    }
+
+    public function login(){
+>>>>>>> parent of 54259da... inclusao logica para hash
         if($this->request->is('post')){
             $user = $this->Auth->identify();
 
