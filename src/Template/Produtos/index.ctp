@@ -31,7 +31,17 @@
                 ?>
             </tbody>
         </table>
-                    
+
+        <div class="paginator">
+            <ul class="pagination">
+                <?php
+                    echo $this->Paginator->prev('Voltar');
+                    echo $this->Paginator->numbers();
+                    echo $this->Paginator->next('Avançar');
+                ?>
+            </ul>
+        </div>
+           
         <?php 
             echo $this->html->Link('Novo Produto' , ['controller' => 'produtos', 'action' => 'novo'])
         ?>

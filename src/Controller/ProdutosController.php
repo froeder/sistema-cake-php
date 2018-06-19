@@ -3,11 +3,20 @@ namespace App\Controller;
 use \Cake\ORM\TableRegistry ;
 
 class ProdutosController extends AppController{
+
+    public $paginate = ['limit' => 10] ;
+
+    public function initialize()
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }
+
     public function index(){
         $produtosTable = TableRegistry::get('Produtos') ;
         $produtos = $produtosTable->find('all') ;
 
-        $this->set('produtos', $produtos);
+        $this->set('produtos', $this->paginate($produtos));
     }
 
     public function novo(){
