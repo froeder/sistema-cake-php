@@ -16,18 +16,6 @@ class UsersController extends AppController
     $this->Auth->allow(['add', 'logout']);
   }
 
-  public function login()
-  {
-    if ($this->request->is('post')) {
-      $user = $this->Auth->identify();
-      if ($user) {
-        $this->Auth->setUser($user);
-        return $this->redirect($this->Auth->redirectUrl());
-      }
-      $this->Flash->error(__('Usuário ou senha ínvalido, tente novamente'));
-    }
-  }
-
   public function logout()
   {
     return $this->redirect($this->Auth->logout());
@@ -44,26 +32,19 @@ class UsersController extends AppController
     $this->set(compact('user'));
   }
 
-  public function add()
+  public function adicionar()
   {
     $user = $this->Users->newEntity();
     if ($this->request->is('post')) {
       $user = $this->Users->patchEntity($user, $this->request->getData());
       if ($this->Users->save($user)) {
         $this->Flash->success(__('O usuário foi salvo.'));
-        return $this->redirect(['action' => 'add']);
+        return $this->redirect(['action' => 'adicionar']);
       }
       $this->Flash->error(__('Não é possível adicionar o usuário.'));
     }
     $this->set('user', $user);
   }
-
-
-<<<<<<< HEAD
-    /*public function login(){
-=======
-        $this->set('user', $user);
-    }
 
     public function apagar($id){
         $userTable = TableRegistry::get('Users') ;
@@ -92,20 +73,8 @@ class UsersController extends AppController
         $this->redirect('Users/index') ;
     }
 
-    public function login(){
->>>>>>> parent of 54259da... inclusao logica para hash
-        if($this->request->is('post')){
-            $user = $this->Auth->identify();
-
-            if($user){
-                $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
-            }else{
-                $this->Flash->set('Usuário ou senha inválidos' , ['element' => 'error']);
-            }
-
-        }
-    }*/
+  
+    
 
 
 }
