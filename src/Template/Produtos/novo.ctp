@@ -11,5 +11,6 @@
             echo $this->Form->end();
 
         ?>
+        <?= $this->Html->Link('Voltar' , ['controller' => 'produtos' , 'action' => 'index']) ?>
     </div>
 </div>

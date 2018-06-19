@@ -14,7 +14,7 @@
                 ->notEmpty('password', 'Senha é necessária')
                 ->notEmpty('role', 'Função é necessária')
                 ->add('role', 'inList', [
-                    'rule' => ['inList', ['admin', 'author']],
+                    'rule' => ['inList', ['admin', 'cliente' , 'funcionario']],
                     'message' => 'Por favor informe uma função válida'
                 ]);
         }
