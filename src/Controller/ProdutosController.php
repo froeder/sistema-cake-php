@@ -45,7 +45,7 @@ class ProdutosController extends AppController{
         $produtosTable = TableRegistry::get('Produtos');
         $produto = $produtosTable->newEntity($this->request->data());
        
-        if($produtosTable->save($produto)) {
+        if(!$produto->errors() && $produtosTable->save($produto)) {
             $msg = "Produto salvo com sucesso" ;
             $this->Flash->set($msg, ['element' => 'success']) ;
         }else {
@@ -53,7 +53,8 @@ class ProdutosController extends AppController{
             $this->Flash->set($msg, ['element' => 'error']) ;
         }
 
-        $this->redirect('Produtos/index');
+        $this->set('produto', $produto);
+        $this->render('novo');
     }
 
     public function editar($id){
