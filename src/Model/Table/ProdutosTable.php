@@ -12,8 +12,12 @@
                     'message' => 'A descrição deve conter ao menos 10 caractres'
                 ]
             ]);
-            $validator->requirePresence('preco', true)->notEmpty('preco');
-            $validator->requirePresence('quantidade', true)->notEmpty('quantidade');
+            $validator->add('preco', [
+                'decimal' => [
+                    'rule' => ['decimal',2],
+                    'message' => 'Digite um número decimal separado por ponto'
+                ]
+            ]);
             return $validator ;
         }
     }
