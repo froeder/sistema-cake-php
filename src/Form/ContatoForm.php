@@ -3,6 +3,7 @@ namespace App\Form ;
 use Cake\Form\Form ;
 use Cake\Form\Schema ;
 use Cake\Validation\Validator ;
+use Cake\Network\Email\Email ;
 
 class ContatoForm  extends Form{
     public function __buildSchema(Schema $schema){
@@ -22,6 +23,16 @@ class ContatoForm  extends Form{
         $validator->notEmpty('email');
 
         return $validator ;
+    }
+
+    public function _execute(array $data){
+
+        $email = new Email('gmail');
+        $email->to('froeder.jhonatan@gmail.com');
+        $email->subject('Contato feito pelo site');
+
+        $msg = 'Contato feito pelo site Nome: teste' ;
+    
     }
 
 }
