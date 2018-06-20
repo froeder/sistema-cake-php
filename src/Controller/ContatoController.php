@@ -15,6 +15,7 @@ class  contatoController extends AppController{
             }
         }
         $this->set('contato', $contato);
+        echo 'teste'
     }
 }
 ?>
